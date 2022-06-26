@@ -10,7 +10,7 @@ from pyunsplash import PyUnsplash
 # import dash_html_components as html
 # from dash.dependencies import Input, Output
 
-dotenv_path = join(dirname(abspath("daily_poem_app/src/app.py")), '../.env')
+dotenv_path = join(dirname(abspath("app.py")), '../.env')
 load_dotenv(dotenv_path)
 UNSPLASH_ACCESS_KEY = os.environ.get("UNSPLASH_ACCESS_KEY")
 X_User_Token = os.environ.get("X_User_Token")
