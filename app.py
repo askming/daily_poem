@@ -10,10 +10,10 @@ from pyunsplash import PyUnsplash
 # import dash_html_components as html
 # from dash.dependencies import Input, Output
 
-dotenv_path = join(dirname(abspath("app.py")), '../.env')
-load_dotenv(dotenv_path)
-UNSPLASH_ACCESS_KEY = os.environ.get("UNSPLASH_ACCESS_KEY")
-X_User_Token = os.environ.get("X_User_Token")
+# dotenv_path = join(dirname(abspath("app.py")), '../.env')
+# load_dotenv(dotenv_path)
+UNSPLASH_ACCESS_KEY = os.environ["UNSPLASH_ACCESS_KEY"]
+X_User_Token = os.environ["X_User_Token"]
 
 header = {"X-User-Token": X_User_Token}
 pu = PyUnsplash(api_key=UNSPLASH_ACCESS_KEY)
