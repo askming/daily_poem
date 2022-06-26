@@ -16,8 +16,8 @@ tenacity==8.0.1
 Werkzeug==2.0.2
 
 python-dotenv
-requests
-os
+requests==2.28.0
+# os
 pyunsplash
 
 # Required for deployment on Heroku
