@@ -1,13 +1,8 @@
-# https://www.gushiwen.cn/
-# from ssl import PEM_FOOTER
 import requests, os
 # from os.path import join, dirname, abspath
 # from dotenv import load_dotenv
 from dash import Dash, dcc, html, Input, Output
 from pyunsplash import PyUnsplash
-# import dash_core_components as dcc
-# import dash_html_components as html
-# from dash.dependencies import Input, Output
 
 # dotenv_path = join(dirname(abspath("app.py")), '../.env')
 # load_dotenv(dotenv_path)
@@ -82,13 +77,11 @@ def update_poem_translate(poem):
     Input("poem", "data")
 )
 def get_a_photo(poem):
-    # if poem['matchTags'][0]:
     photo_kw = poem['origin']['title']
     photos = pu.search(type_='photos', page=1, per_page=1, query=photo_kw)
     for photo in photos.entries:
-        # print(photo.link_html)
         return photo.link_download
 
-# Run app and display result inline in the notebook
+# Run app
 if __name__ == '__main__':
     app.server.run(debug = True)
