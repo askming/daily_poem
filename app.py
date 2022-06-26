@@ -1,10 +1,9 @@
 # https://www.gushiwen.cn/
 # from ssl import PEM_FOOTER
 import requests, os
-from os.path import join, dirname, abspath
-from dotenv import load_dotenv
+# from os.path import join, dirname, abspath
+# from dotenv import load_dotenv
 from dash import Dash, dcc, html, Input, Output
-# import pandas as pd
 from pyunsplash import PyUnsplash
 # import dash_core_components as dcc
 # import dash_html_components as html
@@ -21,6 +20,7 @@ pu = PyUnsplash(api_key=UNSPLASH_ACCESS_KEY)
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = Dash(__name__, external_stylesheets=external_stylesheets)
+server = app.server
 app.layout = html.Div(
     style = {'width': '50%', 'margin': '0 auto'}, 
     children=[
@@ -91,4 +91,4 @@ def get_a_photo(poem):
 
 # Run app and display result inline in the notebook
 if __name__ == '__main__':
-    app.run_server(debug = True, port=8050)
+    app.server.run(debug = True)
